@@ -92,7 +92,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">Get dbutils and spark objects.
 
+Spark / dbutils are not the same on notebooks vs on databricks-connect,
+and instanciating them via databricks-connect takes some time.
+
+The point of this helper function is thus to allow control over when
+to launch this initialisation. This is needed in order to use some of the library's
+functions without having to wait for that spark init unless needed.
+
+Returns
+-------
+(pyspark.sql.session.SparkSession, pyspark.dbutils.DBUtils)
+</pre> 
 </div>
 </div>
 </div><!-- contents -->

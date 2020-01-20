@@ -86,23 +86,43 @@ Functions</h2></td></tr>
 <tr class="separator:aaf93032b8eaa4a33b50b29f9d98b3670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af869949247d74f2fdc36531a9f62235b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#af869949247d74f2fdc36531a9f62235b">migrate_legacy_control_table</a> (config)</td></tr>
 <tr class="separator:af869949247d74f2fdc36531a9f62235b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d5d3bb4a49b0e1fbdf6476f6880739a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#a8d5d3bb4a49b0e1fbdf6476f6880739a">build_regex_part</a> (config, tables)</td></tr>
-<tr class="separator:a8d5d3bb4a49b0e1fbdf6476f6880739a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad4995563caf1d4613396a939618dcc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#acad4995563caf1d4613396a939618dcc">build_regex_part</a> (tables)</td></tr>
+<tr class="separator:acad4995563caf1d4613396a939618dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef8845c4b82027ce26849fa781c07f8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#a1ef8845c4b82027ce26849fa781c07f8">path_to_short_path</a> (path)</td></tr>
 <tr class="separator:a1ef8845c4b82027ce26849fa781c07f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">ETL.raw_control
-~~~~~~~~~~~~~~~
+<div class="textblock"><pre class="fragment">This module provides utility functions to select, insert and delete records of past incremental loads.
 
-This module provides utility functions to select, insert and delete records of past incremental loads.
+Table schema:
+(table_name STRING, last_version INT)
+
+Example rows:
+inc-2020_01_10_22_35_33/Messages
+inc-2020_01_06_16_20_14/Messages
+inc-2019_10_30_13_33_24/Messages
+inc-2019_10_30_13_33_24/Groups
+inc-2020_01_10_22_35_33/Groups
+inc-2020_01_06_16_20_14/Topics
+inc-2019_12_13_17_40_35/Topics
+inc-2020_01_06_16_20_14/Groups
+inc-2020_01_13_13_32_08/Groups
+inc-2020_01_13_13_32_08/Users
+
+Typical incremental flow:
+1. Read content of the control table
+2. Get the paths of raw-zone ingestion folders
+3. Filter folder paths for table that were not in the control table
+4. Get the paths of all files in the remaining folders
+5. Read JSON data with spark in one go by passing it the list of file paths
+6. If data ingestion is successful, insert folder paths in the control table
 
 It is possible to operate on strings instead of registred table names to look for ingestion path patterns.
 Eg. To delete from control table values with table name 'things' but in folder 'inc-2020' only -&gt;
-    ETL.raw_control(config, table_or_string='inc-2020/things')
+  ETL.raw_control(config, table_or_string='inc-2020/things')
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a8d5d3bb4a49b0e1fbdf6476f6880739a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d5d3bb4a49b0e1fbdf6476f6880739a">&#9670;&nbsp;</a></span>build_regex_part()</h2>
+<a id="acad4995563caf1d4613396a939618dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad4995563caf1d4613396a939618dcc">&#9670;&nbsp;</a></span>build_regex_part()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -111,18 +131,8 @@ Eg. To delete from control table values with table name 'things' but in folder '
           <td class="memname">def ETL.raw_control.build_regex_part </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>config</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>tables</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>tables</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -130,7 +140,6 @@ Eg. To delete from control table values with table name 'things' but in folder '
 
 Parameters
 ----------
-config: Config
 tables
 
 Returns

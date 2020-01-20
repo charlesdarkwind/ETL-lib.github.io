@@ -78,10 +78,26 @@ Functions</h2></td></tr>
 <tr class="separator:a1b375def0b26a8bff402b8b5b6bb2667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf0c76d85e3176d6fe54bf0a1294afc2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#adf0c76d85e3176d6fe54bf0a1294afc2">run_transformation</a> (transformation, df, *args, **kwargs)</td></tr>
 <tr class="separator:adf0c76d85e3176d6fe54bf0a1294afc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b75ba4671dc08c3095ef0307d4c9e1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#a34b75ba4671dc08c3095ef0307d4c9e1">write</a> (config, table, num_files=None, df=None, transformation=None, incremental=False, **dataframe_writer_options)</td></tr>
-<tr class="separator:a34b75ba4671dc08c3095ef0307d4c9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd949af23efc5f1bff2ec048d3149d94"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#acd949af23efc5f1bff2ec048d3149d94">write</a> (config, table, num_files=10, df=None, transformation=None, incremental=False, **dataframe_writer_options)</td></tr>
+<tr class="separator:acd949af23efc5f1bff2ec048d3149d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">This module provides utility functions to select/read/write JSON data from the trusted zone.
+
+The names and structure of tables, folders and paths must conform to the library's standard convention:
+
+  - trusted-zone -| - data_source - ...
+              |
+              |
+              | - data_source - ...
+              |
+              |
+              | - yammer -  | - table_name
+                            | - table_name
+                            | - Messages
+                            | - Users
+                            | - Likes
+</pre> </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1b375def0b26a8bff402b8b5b6bb2667"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b375def0b26a8bff402b8b5b6bb2667">&#9670;&nbsp;</a></span>read()</h2>
 
@@ -180,8 +196,8 @@ pyspark.sql.DataFrame
 </pre> 
 </div>
 </div>
-<a id="a34b75ba4671dc08c3095ef0307d4c9e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34b75ba4671dc08c3095ef0307d4c9e1">&#9670;&nbsp;</a></span>write()</h2>
+<a id="acd949af23efc5f1bff2ec048d3149d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd949af23efc5f1bff2ec048d3149d94">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +218,7 @@ pyspark.sql.DataFrame
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>num_files</em> = <code>None</code>, </td>
+          <td class="paramname"><em>num_files</em> = <code>10</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -248,7 +264,7 @@ num_files: int
   How many files to write
 
 df: pyspark.sql.DataFrame
-  Dataframe to write.
+  Dataframe to write. Leave None to read table from curated.
 
 transformation: (pyspark.sql.DataFrame) -&gt; pyspark.sql.DataFrame, optional
   A function taking a df and returning a df.

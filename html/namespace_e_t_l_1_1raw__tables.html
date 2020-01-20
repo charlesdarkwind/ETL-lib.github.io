@@ -82,12 +82,33 @@ Functions</h2></td></tr>
 <tr class="separator:a64e1d8ece7ad4c5ee2cd7238702a745d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">ETL.tables
-~~~~~~~~~~
+<div class="textblock"><pre class="fragment">This module provides utility functions to select/read JSON data from the ingestion raw zone.
 
-This module provides utility functions to select/read JSON data from the ingestion raw zone.
+The names and structure of tables, folders and paths must conform to the library's standard convention:
 
-The names and structure of tables, folders and paths must conform to the library's standard convention.
+- raw-zone -| - data_source - ...
+            |
+            |
+            | - data_source - ...
+            |
+            |
+            | - yammer -  |
+                          |
+                          | - ingestion_date -| - table_name
+                          |                   | - table_name
+                          |
+                          | - ingestion_date -| - table_name
+                          |                   | - table_name
+                          |
+                          | - ingestion_date -| - table_name
+                          |
+                          |
+                          | - inc-2019-12-31 -| - Users
+                          |                   | - Messages
+                          |
+                          | - inc-2020-01-01 -| - Messages
+                                              | - Groups
+
 
 Data cannot be deleted/updated.
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
@@ -128,13 +149,13 @@ Also returns short paths ready to update the raw control table.
 
 Return format:
 
-( [table_file_paths, ...], [short_paths, ....] )
+( [table_file_paths, ...], [control_table_updates, ....] )
 
 (
   [
-    '/dbfs/raw_mount/process_name/inc-2019_09_08/table_name/some_file.json',
-    '/dbfs/raw_mountprocess_name/inc-2019_12_12/table_name/some_file.json',
-    '/dbfs/raw_mount/process_name/inc-2019_12_12/table_name/some_file.json'
+    '/dbfs/raw_mount/data_source/ingestion_date/table_name/some_file.json',
+    '/dbfs/raw_mount/data_source/ingestion_date/table_name/some_file.json',
+    '/dbfs/raw_mount/data_source/ingestion_date/table_name/some_file.json'
   ],
   [
     'inc-2019_09_08/table_name',
@@ -192,12 +213,12 @@ Batching paths discovery by folders may also reduce chances of timeout.
 
 Return format:
 
-( [table_folder_paths, ...], [short_paths, ....] )
+( [table_folder_paths, ...], [control_table_updates, ....] )
 
 (
   [
-    '/dbfs/raw_mount/process_name/inc-2019_09_08/table_name',
-    '/dbfs/raw_mount/process_name/inc-2019_12_12/table_name
+    '/dbfs/raw_mount/data_source/inc-2019_09_08/table_name',
+    '/dbfs/raw_mount/data_source/inc-2019_12_12/table_name
   ],
   [
     'inc-2019_09_08/table_name',

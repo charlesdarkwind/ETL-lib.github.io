@@ -77,8 +77,8 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a5cf1b5612a590fbe4f02916a63d697b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a5cf1b5612a590fbe4f02916a63d697b0">read</a> (config, zone, path, **dataframe_reader_options)</td></tr>
 <tr class="separator:a5cf1b5612a590fbe4f02916a63d697b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f7ae65e4c2b431260acf65e121cb26"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#ab5f7ae65e4c2b431260acf65e121cb26">write</a> (config, df, zone, table, path, **dataframe_writer_options)</td></tr>
-<tr class="separator:ab5f7ae65e4c2b431260acf65e121cb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4956c0dff249f88cf24f1c8e1dfc2f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a7c4956c0dff249f88cf24f1c8e1dfc2f">write</a> (config, df, zone, path, table=None, **dataframe_writer_options)</td></tr>
+<tr class="separator:a7c4956c0dff249f88cf24f1c8e1dfc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b5382c97de7abcc49f5cf213f91656d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a1b5382c97de7abcc49f5cf213f91656d">merge</a> (config, zone, table, df, path, unique_key)</td></tr>
 <tr class="separator:a1b5382c97de7abcc49f5cf213f91656d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a253eb0d98f838d9755b7803ad35bcea5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a253eb0d98f838d9755b7803ad35bcea5">delete</a> (config, zone, table, path, database_name=None, drop=False)</td></tr>
@@ -94,10 +94,7 @@ Variables</h2></td></tr>
 <tr class="separator:a413a07e5b8d1ff17f754fee83afdb6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">ETL.delta_utils
-~~~~~~~~~~~~~~~
-
-This module provides utility functions to select, insert and delete operations on delta tables.
+<div class="textblock"><pre class="fragment">This module provides utility functions to select, insert and delete operations on delta tables.
 
 The names and structure of tables, folders and paths do not have to conform to the library's standard convention.
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
@@ -213,7 +210,7 @@ zone: str
 table
 path: str
 database_name: str, optional
-  Defaults to config.process_name
+  Defaults to config.data_source
 drop: bool, optional
   Drop table
 </pre> 
@@ -335,10 +332,10 @@ Can still return a empty dataframe or a dataframe of empty rows if such is obtai
 
 Parameters
 ----------
-config
-zone
-path
-dataframe_reader_options
+config: Config
+zone: str
+path: str
+dataframe_reader_options: dict
 
 Returns
 -------
@@ -377,8 +374,8 @@ Parameters
 </pre> 
 </div>
 </div>
-<a id="ab5f7ae65e4c2b431260acf65e121cb26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5f7ae65e4c2b431260acf65e121cb26">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a7c4956c0dff249f88cf24f1c8e1dfc2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4956c0dff249f88cf24f1c8e1dfc2f">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,13 +402,13 @@ Parameters
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>table</em>, </td>
+          <td class="paramname"><em>path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
+          <td class="paramname"><em>table</em> = <code>None</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -435,11 +432,10 @@ config: Config
 df: pyspark.sql.DataFrame
   Dataframe containing the data to save in the curated delta table.
 zone: str
-table:str
 path: str
-dataframe_writer_options:
-    mode: str
-        'overwrite' or 'append'
+table: str, optional
+  Defaults to path if None
+dataframe_writer_options: dict
 </pre> 
 </div>
 </div>

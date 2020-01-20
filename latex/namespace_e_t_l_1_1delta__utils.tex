@@ -5,7 +5,7 @@
 \item 
 def \mbox{\hyperlink{namespace_e_t_l_1_1delta__utils_a5cf1b5612a590fbe4f02916a63d697b0}{read}} (config, zone, path, $\ast$$\ast$dataframe\+\_\+reader\+\_\+options)
 \item 
-def \mbox{\hyperlink{namespace_e_t_l_1_1delta__utils_ab5f7ae65e4c2b431260acf65e121cb26}{write}} (config, df, zone, table, path, $\ast$$\ast$dataframe\+\_\+writer\+\_\+options)
+def \mbox{\hyperlink{namespace_e_t_l_1_1delta__utils_a7c4956c0dff249f88cf24f1c8e1dfc2f}{write}} (config, df, zone, path, table=None, $\ast$$\ast$dataframe\+\_\+writer\+\_\+options)
 \item 
 def \mbox{\hyperlink{namespace_e_t_l_1_1delta__utils_a1b5382c97de7abcc49f5cf213f91656d}{merge}} (config, zone, table, df, path, unique\+\_\+key)
 \item 
@@ -23,10 +23,7 @@ def \mbox{\hyperlink{namespace_e_t_l_1_1delta__utils_a413a07e5b8d1ff17f754fee83a
 
 
 \doxysubsection{Detailed Description}
-\begin{DoxyVerb}ETL.delta_utils
-~~~~~~~~~~~~~~~
-
-This module provides utility functions to select, insert and delete operations on delta tables.
+\begin{DoxyVerb}This module provides utility functions to select, insert and delete operations on delta tables.
 
 The names and structure of tables, folders and paths do not have to conform to the library's standard convention.
 \end{DoxyVerb}
@@ -69,7 +66,7 @@ zone: str
 table
 path: str
 database_name: str, optional
-  Defaults to config.process_name
+  Defaults to config.data_source
 drop: bool, optional
   Drop table
 \end{DoxyVerb}
@@ -113,10 +110,10 @@ Can still return a empty dataframe or a dataframe of empty rows if such is obtai
 
 Parameters
 ----------
-config
-zone
-path
-dataframe_reader_options
+config: Config
+zone: str
+path: str
+dataframe_reader_options: dict
 
 Returns
 -------
@@ -142,11 +139,11 @@ Parameters
 ----------
   path: str
 \end{DoxyVerb}
- \mbox{\Hypertarget{namespace_e_t_l_1_1delta__utils_ab5f7ae65e4c2b431260acf65e121cb26}\label{namespace_e_t_l_1_1delta__utils_ab5f7ae65e4c2b431260acf65e121cb26}} 
+ \mbox{\Hypertarget{namespace_e_t_l_1_1delta__utils_a7c4956c0dff249f88cf24f1c8e1dfc2f}\label{namespace_e_t_l_1_1delta__utils_a7c4956c0dff249f88cf24f1c8e1dfc2f}} 
 \index{ETL.delta\_utils@{ETL.delta\_utils}!write@{write}}
 \index{write@{write}!ETL.delta\_utils@{ETL.delta\_utils}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily def E\+T\+L.\+delta\+\_\+utils.\+write (\begin{DoxyParamCaption}\item[{}]{config,  }\item[{}]{df,  }\item[{}]{zone,  }\item[{}]{table,  }\item[{}]{path,  }\item[{$\ast$$\ast$}]{dataframe\+\_\+writer\+\_\+options }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def E\+T\+L.\+delta\+\_\+utils.\+write (\begin{DoxyParamCaption}\item[{}]{config,  }\item[{}]{df,  }\item[{}]{zone,  }\item[{}]{path,  }\item[{}]{table = {\ttfamily None},  }\item[{$\ast$$\ast$}]{dataframe\+\_\+writer\+\_\+options }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Write/save data in the delta table(s).
 
@@ -157,11 +154,10 @@ config: Config
 df: pyspark.sql.DataFrame
   Dataframe containing the data to save in the curated delta table.
 zone: str
-table:str
 path: str
-dataframe_writer_options:
-    mode: str
-        'overwrite' or 'append'
+table: str, optional
+  Defaults to path if None
+dataframe_writer_options: dict
 \end{DoxyVerb}
  
 

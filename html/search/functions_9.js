@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['log_201',['log',['../namespace_e_t_l_1_1utils.html#ad80c14198e59b1855b5aad48ddd89bf6',1,'ETL::utils']]]
+  ['init_5fdebug_5flogger_5ffile_5fhandler_209',['init_debug_logger_file_handler',['../class_e_t_l_1_1config_1_1_config.html#a9b89a0f4e0d67eba4f26ebd08b81bd90',1,'ETL::config::Config']]],
+  ['insert_210',['insert',['../namespace_e_t_l_1_1raw__control.html#aed23d1a1ebd928768729b395f32360c4',1,'ETL::raw_control']]],
+  ['install_5fpy_5flib_211',['install_py_lib',['../namespace_e_t_l_1_1dbfs__utils.html#a2a8b7b5edd7a2c1f0c5628defe7a2b0a',1,'ETL::dbfs_utils']]]
 ];

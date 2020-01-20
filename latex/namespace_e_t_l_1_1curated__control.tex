@@ -14,8 +14,29 @@ def \mbox{\hyperlink{namespace_e_t_l_1_1curated__control_a80e6e9b37203e4af1fa05f
 
 
 \doxysubsection{Detailed Description}
-\begin{DoxyVerb}ETL.raw_control
-~~~~~~~~~~~~~~~\end{DoxyVerb}
+\begin{DoxyVerb}Functions to use the control table in wich is saved information about ingested curated-zone folders.
+
+For an incremental loads or finding row-level updates between two points in time of a given table.
+
+Table schema:
+  (table_name STRING, last_version INT)
+
+Example rows:
+  MessagesLikes 1
+  MessagesLikes 2
+  Messages 1
+  Messages 2
+  Messages 3
+  Groups  1
+
+Typical incremental flow:
+  1. read data from curated (current table state)
+  2. look the control table for "table_name" and get the row with highest value of "version"
+  3. read curated data from that point in time using the version from the control table
+  4. substract (SQL except) that second df from the first one
+  5. ingest/process the curated data
+  6. if data was successfully processed, get the new "VERSION" from the table's metadata
+  7. insert a row in the control table with (table_name, version)\end{DoxyVerb}
  
 
 \doxysubsection{Function Documentation}

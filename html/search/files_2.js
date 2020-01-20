@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['dbfs_5futils_2epy_158',['dbfs_utils.py',['../dbfs__utils_8py.html',1,'']]],
-  ['default_5fparams_2epy_159',['default_params.py',['../default__params_8py.html',1,'']]],
-  ['delete_2epy_160',['delete.py',['../delete_8py.html',1,'']]],
-  ['delta_5futils_2epy_161',['delta_utils.py',['../delta__utils_8py.html',1,'']]]
+  ['dataframe_5futils_2epy_161',['dataframe_utils.py',['../dataframe__utils_8py.html',1,'']]],
+  ['dbfs_5futils_2epy_162',['dbfs_utils.py',['../dbfs__utils_8py.html',1,'']]],
+  ['default_5fparams_2epy_163',['default_params.py',['../default__params_8py.html',1,'']]],
+  ['delete_2epy_164',['delete.py',['../delete_8py.html',1,'']]],
+  ['delta_5futils_2epy_165',['delta_utils.py',['../delta__utils_8py.html',1,'']]]
 ];
