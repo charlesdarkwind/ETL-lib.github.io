@@ -84,6 +84,8 @@ Functions</h2></td></tr>
 <tr class="separator:a4a56c7258d39797519b47fec8d0cfa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e0ee33d0a378cba28e7bac80eafd25e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1string__format.html#a0e0ee33d0a378cba28e7bac80eafd25e">format_phone</a> (col_name)</td></tr>
 <tr class="separator:a0e0ee33d0a378cba28e7bac80eafd25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6973a98d2debe00732f4c84ec339e493"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1string__format.html#a6973a98d2debe00732f4c84ec339e493">format_transit_id</a> (col_name)</td></tr>
+<tr class="separator:a6973a98d2debe00732f4c84ec339e493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Common string formatting operations for W3C semantic standards.</pre> </div><h2 class="groupheader">Function Documentation</h2>
@@ -134,6 +136,33 @@ pyspark.sql.column
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Formats a 10 digits number or takes the first 10 digits of a number.
+
+Parameters
+----------
+col_name: str
+
+Returns
+-------
+pyspark.sql.column
+</pre> 
+</div>
+</div>
+<a id="a6973a98d2debe00732f4c84ec339e493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6973a98d2debe00732f4c84ec339e493">&#9670;&nbsp;</a></span>format_transit_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def ETL.string_format.format_transit_id </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Add a dash before the last character or digit.
 
 Parameters
 ----------
