@@ -15,7 +15,7 @@ def \mbox{\hyperlink{namespace_e_t_l_1_1raw__control_aaf93032b8eaa4a33b50b29f9d9
 \item 
 def \mbox{\hyperlink{namespace_e_t_l_1_1raw__control_af869949247d74f2fdc36531a9f62235b}{migrate\+\_\+legacy\+\_\+control\+\_\+table}} (config)
 \item 
-def \mbox{\hyperlink{namespace_e_t_l_1_1raw__control_acad4995563caf1d4613396a939618dcc}{build\+\_\+regex\+\_\+part}} (tables)
+def \mbox{\hyperlink{namespace_e_t_l_1_1raw__control_a68c01ed82bea7ebc7cea7c18c06e96ac}{build\+\_\+regex\+\_\+part}} (pattern)
 \item 
 def \mbox{\hyperlink{namespace_e_t_l_1_1raw__control_a1ef8845c4b82027ce26849fa781c07f8}{path\+\_\+to\+\_\+short\+\_\+path}} (path)
 \end{DoxyCompactItemize}
@@ -54,17 +54,18 @@ Eg. To delete from control table values with table name 'things' but in folder '
  
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespace_e_t_l_1_1raw__control_acad4995563caf1d4613396a939618dcc}\label{namespace_e_t_l_1_1raw__control_acad4995563caf1d4613396a939618dcc}} 
+\mbox{\Hypertarget{namespace_e_t_l_1_1raw__control_a68c01ed82bea7ebc7cea7c18c06e96ac}\label{namespace_e_t_l_1_1raw__control_a68c01ed82bea7ebc7cea7c18c06e96ac}} 
 \index{ETL.raw\_control@{ETL.raw\_control}!build\_regex\_part@{build\_regex\_part}}
 \index{build\_regex\_part@{build\_regex\_part}!ETL.raw\_control@{ETL.raw\_control}}
 \doxysubsubsection{\texorpdfstring{build\_regex\_part()}{build\_regex\_part()}}
-{\footnotesize\ttfamily def E\+T\+L.\+raw\+\_\+control.\+build\+\_\+regex\+\_\+part (\begin{DoxyParamCaption}\item[{}]{tables }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def E\+T\+L.\+raw\+\_\+control.\+build\+\_\+regex\+\_\+part (\begin{DoxyParamCaption}\item[{}]{pattern }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Build SQL "WHERE path RLIKE -> regex_part <-" to match rows containing tables.
 
 Parameters
 ----------
-tables
+pattern: str
+  Table to search or string like a specific folder with a table eg. "inc-2020-01-08/table"
 
 Returns
 -------

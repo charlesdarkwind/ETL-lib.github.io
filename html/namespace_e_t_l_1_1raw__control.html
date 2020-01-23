@@ -86,8 +86,8 @@ Functions</h2></td></tr>
 <tr class="separator:aaf93032b8eaa4a33b50b29f9d98b3670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af869949247d74f2fdc36531a9f62235b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#af869949247d74f2fdc36531a9f62235b">migrate_legacy_control_table</a> (config)</td></tr>
 <tr class="separator:af869949247d74f2fdc36531a9f62235b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad4995563caf1d4613396a939618dcc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#acad4995563caf1d4613396a939618dcc">build_regex_part</a> (tables)</td></tr>
-<tr class="separator:acad4995563caf1d4613396a939618dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c01ed82bea7ebc7cea7c18c06e96ac"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#a68c01ed82bea7ebc7cea7c18c06e96ac">build_regex_part</a> (pattern)</td></tr>
+<tr class="separator:a68c01ed82bea7ebc7cea7c18c06e96ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef8845c4b82027ce26849fa781c07f8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#a1ef8845c4b82027ce26849fa781c07f8">path_to_short_path</a> (path)</td></tr>
 <tr class="separator:a1ef8845c4b82027ce26849fa781c07f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -121,8 +121,8 @@ It is possible to operate on strings instead of registred table names to look fo
 Eg. To delete from control table values with table name 'things' but in folder 'inc-2020' only -&gt;
   ETL.raw_control(config, table_or_string='inc-2020/things')
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="acad4995563caf1d4613396a939618dcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad4995563caf1d4613396a939618dcc">&#9670;&nbsp;</a></span>build_regex_part()</h2>
+<a id="a68c01ed82bea7ebc7cea7c18c06e96ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c01ed82bea7ebc7cea7c18c06e96ac">&#9670;&nbsp;</a></span>build_regex_part()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +131,7 @@ Eg. To delete from control table values with table name 'things' but in folder '
           <td class="memname">def ETL.raw_control.build_regex_part </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>tables</em></td><td>)</td>
+          <td class="paramname"><em>pattern</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -140,7 +140,8 @@ Eg. To delete from control table values with table name 'things' but in folder '
 
 Parameters
 ----------
-tables
+pattern: str
+  Table to search or string like a specific folder with a table eg. "inc-2020-01-08/table"
 
 Returns
 -------
