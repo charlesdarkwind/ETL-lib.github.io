@@ -13,7 +13,7 @@ def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fab
 \item 
 def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_aefdb79eea94081aa9aa5201620cc2131}{debug\+\_\+win}} (self, msg)
 \item 
-def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_ae760b56d717077839299d0a36edafecf}{debug}} (self, msg, func=None)
+def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af0b2a76025ac13d4620c07ff20279f3c}{debug}} (self, msg, func=None, list\+\_\+sample\+\_\+size=100)
 \item 
 def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a3e4765f45faf8aa4881a64e3a985cc4d}{get\+\_\+mount\+\_\+name\+\_\+from\+\_\+zone\+\_\+name}} (self, zone)
 \item 
@@ -87,9 +87,9 @@ list \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06
 \item 
 list \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a5cd61c121662c7d2b6ceb5b949e59cde}{supported\+\_\+zones\+\_\+all}} = \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}} + \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}
 \item 
-\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_ac7b3f824860d5ce1b7b7324103e0f872}{data\+\_\+zone\+\_\+to\+\_\+test\+\_\+zone\+\_\+hash}}
+\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_ac7b3f824860d5ce1b7b7324103e0f872}{data\+\_\+zone\+\_\+to\+\_\+test\+\_\+zone\+\_\+hash}} = dict(zip(\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}}, \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}))
 \item 
-\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a08fbc5aaef6a24ccd1b334b0ce94d150}{test\+\_\+zone\+\_\+to\+\_\+data\+\_\+zone\+\_\+hash}}
+\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a08fbc5aaef6a24ccd1b334b0ce94d150}{test\+\_\+zone\+\_\+to\+\_\+data\+\_\+zone\+\_\+hash}} = dict(zip(\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}, \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}}))
 \end{DoxyCompactItemize}
 
 
@@ -115,21 +115,24 @@ Returns
 -------
 dict
 \end{DoxyVerb}
- \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_ae760b56d717077839299d0a36edafecf}\label{class_e_t_l_1_1config_1_1_config_ae760b56d717077839299d0a36edafecf}} 
+ \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_af0b2a76025ac13d4620c07ff20279f3c}\label{class_e_t_l_1_1config_1_1_config_af0b2a76025ac13d4620c07ff20279f3c}} 
 \index{ETL.config.Config@{ETL.config.Config}!debug@{debug}}
 \index{debug@{debug}!ETL.config.Config@{ETL.config.Config}}
 \doxysubsubsection{\texorpdfstring{debug()}{debug()}}
-{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg,  }\item[{}]{func = {\ttfamily None} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg,  }\item[{}]{func = {\ttfamily None},  }\item[{}]{list\+\_\+sample\+\_\+size = {\ttfamily 100} }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Log message to file.
 
 Parameters
 ----------
-msg: str
+msg: str or list
   Message to add as a new line in the log file
 
 func: function, optional
   Function from where the debug statement originated as to extract its informations.
+
+list_sample_size: int, optional
+  When passing a list of strings to log, limit the size to this. (choosen randomly but uniformly)
 \end{DoxyVerb}
  \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fabfceba7e}\label{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fabfceba7e}} 
 \index{ETL.config.Config@{ETL.config.Config}!debug\_adls@{debug\_adls}}
@@ -349,14 +352,8 @@ list
 \index{ETL.config.Config@{ETL.config.Config}!data\_zone\_to\_test\_zone\_hash@{data\_zone\_to\_test\_zone\_hash}}
 \index{data\_zone\_to\_test\_zone\_hash@{data\_zone\_to\_test\_zone\_hash}!ETL.config.Config@{ETL.config.Config}}
 \doxysubsubsection{\texorpdfstring{data\_zone\_to\_test\_zone\_hash}{data\_zone\_to\_test\_zone\_hash}}
-{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+data\+\_\+zone\+\_\+to\+\_\+test\+\_\+zone\+\_\+hash\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+data\+\_\+zone\+\_\+to\+\_\+test\+\_\+zone\+\_\+hash = dict(zip(\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}}, \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}))\hspace{0.3cm}{\ttfamily [static]}}
 
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=  dict(}
-\DoxyCodeLine{    zip(supported\_zones\_data, supported\_zones\_test))}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a86629d75b319220978715ecb8e503a54}\label{class_e_t_l_1_1config_1_1_config_a86629d75b319220978715ecb8e503a54}} 
 \index{ETL.config.Config@{ETL.config.Config}!debug\_logger\_file@{debug\_logger\_file}}
 \index{debug\_logger\_file@{debug\_logger\_file}!ETL.config.Config@{ETL.config.Config}}
@@ -469,14 +466,8 @@ list
 \index{ETL.config.Config@{ETL.config.Config}!test\_zone\_to\_data\_zone\_hash@{test\_zone\_to\_data\_zone\_hash}}
 \index{test\_zone\_to\_data\_zone\_hash@{test\_zone\_to\_data\_zone\_hash}!ETL.config.Config@{ETL.config.Config}}
 \doxysubsubsection{\texorpdfstring{test\_zone\_to\_data\_zone\_hash}{test\_zone\_to\_data\_zone\_hash}}
-{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+test\+\_\+zone\+\_\+to\+\_\+data\+\_\+zone\+\_\+hash\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+test\+\_\+zone\+\_\+to\+\_\+data\+\_\+zone\+\_\+hash = dict(zip(\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}, \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}}))\hspace{0.3cm}{\ttfamily [static]}}
 
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=  dict(}
-\DoxyCodeLine{    zip(supported\_zones\_test, supported\_zones\_data))}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a450f83662f0080a58c3961049df6a4a6}\label{class_e_t_l_1_1config_1_1_config_a450f83662f0080a58c3961049df6a4a6}} 
 \index{ETL.config.Config@{ETL.config.Config}!with\_limited\_features@{with\_limited\_features}}
 \index{with\_limited\_features@{with\_limited\_features}!ETL.config.Config@{ETL.config.Config}}
