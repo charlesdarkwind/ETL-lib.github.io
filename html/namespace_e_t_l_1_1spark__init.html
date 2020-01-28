@@ -94,6 +94,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <pre class="fragment">Get dbutils and spark objects.
 
+Do not put this at module scope to prevent spark initialisation on import.
+
 Spark / dbutils are not the same on notebooks vs on databricks-connect,
 and instanciating them via databricks-connect takes some time.
 

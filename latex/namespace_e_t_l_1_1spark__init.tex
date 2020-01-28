@@ -16,6 +16,8 @@ def \mbox{\hyperlink{namespace_e_t_l_1_1spark__init_a7f2639d90f1355a37aca77e7a0d
 
 \begin{DoxyVerb}Get dbutils and spark objects.
 
+Do not put this at module scope to prevent spark initialisation on import.
+
 Spark / dbutils are not the same on notebooks vs on databricks-connect,
 and instanciating them via databricks-connect takes some time.
 
