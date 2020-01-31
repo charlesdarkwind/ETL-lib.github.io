@@ -82,12 +82,12 @@ table: str
   Name of the table / folder.
 df: pyspark.sql.DataFrame, optional
   Dataframe containing the data to save in the curated delta table.
-transformation: (pyspark.sql.DataFrame) -> pyspark.sql.DataFrame, optional
+transformation: ETL.transform.Transform or (pyspark.sql.DataFrame) -> pyspark.sql.DataFrame, optional
   A function taking a df and returning a df.
 unique_key: list or str, optional
   Columns with unique values or list of columns to use as a combined unique key.
 incremental: bool, optional
-  To perform incremental load based on the raw-zone's control table content.
+  To perform incremental load based on the raw-zone's control table content. Only when not passing own df.
 raw_dataframe_reader_options: dict, optional
   If df is not None, options are used when reading raw zone files.
 \end{DoxyVerb}
@@ -132,7 +132,7 @@ table: str
   Name of the table / folder.
 df: pyspark.sql.DataFrame, optional
   Dataframe containing the data to save in the curated delta table.
-transformation: (pyspark.sql.DataFrame) -> pyspark.sql.DataFrame, optional
+transformation: ETL.transform.Transform or (pyspark.sql.DataFrame) -> pyspark.sql.DataFrame, optional
   A function taking a df and returning a df.
 incremental: bool, optional
   To perform incremental load based on the raw-zone's control table content.

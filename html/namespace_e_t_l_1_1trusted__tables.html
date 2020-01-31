@@ -76,8 +76,6 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a1b375def0b26a8bff402b8b5b6bb2667"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#a1b375def0b26a8bff402b8b5b6bb2667">read</a> (config, table, **dataframe_reader_options)</td></tr>
 <tr class="separator:a1b375def0b26a8bff402b8b5b6bb2667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf0c76d85e3176d6fe54bf0a1294afc2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#adf0c76d85e3176d6fe54bf0a1294afc2">run_transformation</a> (transformation, df, *args, **kwargs)</td></tr>
-<tr class="separator:adf0c76d85e3176d6fe54bf0a1294afc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd949af23efc5f1bff2ec048d3149d94"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#acd949af23efc5f1bff2ec048d3149d94">write</a> (config, table, num_files=10, df=None, transformation=None, incremental=False, **dataframe_writer_options)</td></tr>
 <tr class="separator:acd949af23efc5f1bff2ec048d3149d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -139,60 +137,6 @@ config: Config
 table: str
 
 dataframe_reader_options
-</pre> 
-</div>
-</div>
-<a id="adf0c76d85e3176d6fe54bf0a1294afc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf0c76d85e3176d6fe54bf0a1294afc2">&#9670;&nbsp;</a></span>run_transformation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def ETL.trusted_tables.run_transformation </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>transformation</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>df</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">*&#160;</td>
-          <td class="paramname"><em>args</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">**&#160;</td>
-          <td class="paramname"><em>kwargs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Run transformation on df using arguments.
-
-Pass a tuple like (transform, df, myarg, other_arg=val)
-
-Parameters
-----------
-transformation: (pyspark.sql.DataFrame, args, kwargs) -&gt; pyspark.sql.DataFrame
-  A function taking a df and returning a df.
-
-df: pyspark.sql.DataFrame
-
-Returns
--------
-pyspark.sql.DataFrame
 </pre> 
 </div>
 </div>
@@ -266,7 +210,7 @@ num_files: int
 df: pyspark.sql.DataFrame
   Dataframe to write. Leave None to read table from curated.
 
-transformation: (pyspark.sql.DataFrame) -&gt; pyspark.sql.DataFrame, optional
+transformation: ETL.transform.Transform or (pyspark.sql.DataFrame) -&gt; pyspark.sql.DataFrame, optional
   A function taking a df and returning a df.
 
 incremental: bool, optional
