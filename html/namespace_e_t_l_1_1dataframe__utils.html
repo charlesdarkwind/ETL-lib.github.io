@@ -74,8 +74,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abdb725a93926b14a912f7ea725329032"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1dataframe__utils.html#abdb725a93926b14a912f7ea725329032">write</a> (config, df, zone, path, file_format, num_files=None, **dataframe_writer_options)</td></tr>
-<tr class="separator:abdb725a93926b14a912f7ea725329032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0fc9c95a639d952ac8330ca412291b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1dataframe__utils.html#a9c0fc9c95a639d952ac8330ca412291b">write</a> (config, df, zone, path, file_format, num_files=None, check_df=True, **dataframe_writer_options)</td></tr>
+<tr class="separator:a9c0fc9c95a639d952ac8330ca412291b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a538b6d98440ff39b1bade35dbd016db7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1dataframe__utils.html#a538b6d98440ff39b1bade35dbd016db7">read</a> (config, zone, path, **dataframe_reader_options)</td></tr>
 <tr class="separator:a538b6d98440ff39b1bade35dbd016db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55775e854a18fcd1bd5c10511feb584b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1dataframe__utils.html#a55775e854a18fcd1bd5c10511feb584b">groupby_and_to_list</a> (df, groupby_col_name, new_col_name='x')</td></tr>
@@ -220,8 +220,8 @@ pyspark.sql.DataFrame
 </pre> 
 </div>
 </div>
-<a id="abdb725a93926b14a912f7ea725329032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdb725a93926b14a912f7ea725329032">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a9c0fc9c95a639d952ac8330ca412291b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0fc9c95a639d952ac8330ca412291b">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,6 +265,12 @@ pyspark.sql.DataFrame
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>check_df</em> = <code>True</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">**&#160;</td>
           <td class="paramname"><em>dataframe_writer_options</em>&#160;</td>
         </tr>
@@ -289,6 +295,8 @@ file_format: str
   json, csv, parquet or delta
 num_files: int, optional
   How many files to write.
+check_df: bool
+  Dont check if df is empty before write, large execution plans can make the dataframewriter crash
 dataframe_writer_options
 </pre> 
 </div>
