@@ -76,8 +76,8 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:ab64fbc8de8a732d124cb15ace3a6f192"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#ab64fbc8de8a732d124cb15ace3a6f192">select</a> (config, table_or_string)</td></tr>
 <tr class="separator:ab64fbc8de8a732d124cb15ace3a6f192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed23d1a1ebd928768729b395f32360c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#aed23d1a1ebd928768729b395f32360c4">insert</a> (config, paths)</td></tr>
-<tr class="separator:aed23d1a1ebd928768729b395f32360c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4aed121c478e2ff4ec9e80e1b915ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#a6d4aed121c478e2ff4ec9e80e1b915ff">insert</a> (config, paths, table=None)</td></tr>
+<tr class="separator:a6d4aed121c478e2ff4ec9e80e1b915ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad39e6d6044dd73899c9bbe334d76362f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#ad39e6d6044dd73899c9bbe334d76362f">delete</a> (config, table_or_string_pattern)</td></tr>
 <tr class="separator:ad39e6d6044dd73899c9bbe334d76362f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3c1deecf26ade9e2ea90b62d66bba3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1raw__control.html#aaf3c1deecf26ade9e2ea90b62d66bba3">path_is_valid</a> (path, raise_when_invalid=False)</td></tr>
@@ -225,8 +225,8 @@ table_or_string_pattern: str
 </pre> 
 </div>
 </div>
-<a id="aed23d1a1ebd928768729b395f32360c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed23d1a1ebd928768729b395f32360c4">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="a6d4aed121c478e2ff4ec9e80e1b915ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4aed121c478e2ff4ec9e80e1b915ff">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +241,13 @@ table_or_string_pattern: str
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>paths</em>&#160;</td>
+          <td class="paramname"><em>paths</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>table</em> = <code>None</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -261,6 +267,9 @@ config: ETL.Config
 
 paths: list
   Valid DBFS paths to insert in the control table.
+
+table: str, optional
+  Only for logging purposes.
 </pre> 
 </div>
 </div>
