@@ -40,7 +40,7 @@ The names and structure of tables, folders and paths do not have to conform to t
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 table: str
   Table's registered name in the metastore
@@ -59,7 +59,7 @@ Only use drop when really needed, otherwise just overwrite or delete.
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 zone: str
   Zone containing the tables to test.
@@ -87,7 +87,7 @@ Eg. "ON delta_messages.message_id = updates.message_id AND delta_messages.id = u
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 zone: str
 table: str
@@ -110,7 +110,7 @@ Can still return a empty dataframe or a dataframe of empty rows if such is obtai
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
 zone: str
 path: str
 dataframe_reader_options: dict
@@ -149,7 +149,7 @@ Parameters
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 df: pyspark.sql.DataFrame
   Dataframe containing the data to save in the curated delta table.

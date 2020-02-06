@@ -49,7 +49,7 @@ Only use drop when really needed, otherwise just overwrite or delete.
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 table: str or list, optional
   Table name
@@ -76,7 +76,7 @@ Eg. "ON delta_messages.message_id = updates.message_id AND delta_messages.id = u
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 table: str
   Name of the table / folder.
@@ -104,7 +104,7 @@ Can still return a empty dataframe or a dataframe of empty rows if such is obtai
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
 table: str
 incremental: bool
   To perform incremental read based on the raw-zone's control table content.
@@ -126,7 +126,7 @@ pyspark.sql.DataFrame
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 table: str
   Name of the table / folder.

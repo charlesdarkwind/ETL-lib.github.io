@@ -83,9 +83,10 @@ Save raw zone short paths, eg. "inc-2019-06-13/MessagesLikes"
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
-name
+name: str, optional
+  If specified, name to use.
 \end{DoxyVerb}
  \mbox{\Hypertarget{namespace_e_t_l_1_1raw__control_ad39e6d6044dd73899c9bbe334d76362f}\label{namespace_e_t_l_1_1raw__control_ad39e6d6044dd73899c9bbe334d76362f}} 
 \index{ETL.raw\_control@{ETL.raw\_control}!delete@{delete}}
@@ -99,7 +100,7 @@ Is case sensitive.
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 
 table_or_string_pattern: str
@@ -116,7 +117,7 @@ Valid path example: 'inc-2019_07_18/Topics'
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 
 paths: list
@@ -148,7 +149,7 @@ allow for a more granular control:
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
   Config instance
 \end{DoxyVerb}
  \mbox{\Hypertarget{namespace_e_t_l_1_1raw__control_aaf3c1deecf26ade9e2ea90b62d66bba3}\label{namespace_e_t_l_1_1raw__control_aaf3c1deecf26ade9e2ea90b62d66bba3}} 
@@ -187,7 +188,7 @@ str
 
 Parameters
 ----------
-config: Config
+config: ETL.Config
 table_or_string
 
 Returns

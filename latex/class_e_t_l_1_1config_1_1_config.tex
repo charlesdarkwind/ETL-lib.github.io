@@ -7,13 +7,11 @@ def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a3bbd9e3918c54aee590fbfbc1
 \item 
 def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_aa267e8a2dfa14e83f77ca2a15446e6db}{adls\+\_\+configs}} (self)
 \item 
-def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a9b89a0f4e0d67eba4f26ebd08b81bd90}{init\+\_\+debug\+\_\+logger\+\_\+file\+\_\+handler}} (self)
+def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a3961238dc1be1060d6e9e48a6aa25c6c}{init\+\_\+debug\+\_\+file}} (self)
 \item 
-def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fabfceba7e}{debug\+\_\+adls}} (self, msg)
+def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_ac7af22d00481c801274b84454b43d441}{write\+\_\+debug}} (self, obj)
 \item 
-def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_aefdb79eea94081aa9aa5201620cc2131}{debug\+\_\+win}} (self, msg)
-\item 
-def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_adf019019e08543baee68509bbb73cf9a}{debug}} (self, msg, func=None, list\+\_\+sample\+\_\+size=1000)
+def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af1988b162dc62c26b074829f97558bff}{debug}} (self, table=None, message=None, func=None, list\+\_\+data=None, list\+\_\+sample\+\_\+size=1000)
 \item 
 def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a3e4765f45faf8aa4881a64e3a985cc4d}{get\+\_\+mount\+\_\+name\+\_\+from\+\_\+zone\+\_\+name}} (self, zone)
 \item 
@@ -76,7 +74,7 @@ def \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_ad539523e42465dca5cc4ce00b
 \item 
 \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a285cbf623f5fae764fe787495a83372f}{C\+O\+N\+T\+A\+I\+N\+E\+R\+\_\+\+T\+R\+U\+S\+T\+ED}}
 \item 
-\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a86629d75b319220978715ecb8e503a54}{debug\+\_\+logger\+\_\+file}}
+\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a4892d9527cc8df0a9de9f03c93278068}{debug\+\_\+file}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -115,52 +113,30 @@ Returns
 -------
 dict
 \end{DoxyVerb}
- \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_adf019019e08543baee68509bbb73cf9a}\label{class_e_t_l_1_1config_1_1_config_adf019019e08543baee68509bbb73cf9a}} 
+ \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_af1988b162dc62c26b074829f97558bff}\label{class_e_t_l_1_1config_1_1_config_af1988b162dc62c26b074829f97558bff}} 
 \index{ETL.config.Config@{ETL.config.Config}!debug@{debug}}
 \index{debug@{debug}!ETL.config.Config@{ETL.config.Config}}
 \doxysubsubsection{\texorpdfstring{debug()}{debug()}}
-{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg,  }\item[{}]{func = {\ttfamily None},  }\item[{}]{list\+\_\+sample\+\_\+size = {\ttfamily 1000} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{table = {\ttfamily None},  }\item[{}]{message = {\ttfamily None},  }\item[{}]{func = {\ttfamily None},  }\item[{}]{list\+\_\+data = {\ttfamily None},  }\item[{}]{list\+\_\+sample\+\_\+size = {\ttfamily 1000} }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Log message to file.
 
 Parameters
 ----------
-msg: str or list
-  Message to add as a new line in the log file
+table: str
+  Table / source
+
+message: str
+  Message
 
 func: function, optional
   Function from where the debug statement originated as to extract its informations.
 
+list_data: list of str, optional
+  List of strings, any collection of custom metadata to log.
+
 list_sample_size: int, optional
   When passing a list of strings to log, limit the size to this. (choosen randomly but uniformly)
-\end{DoxyVerb}
- \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fabfceba7e}\label{class_e_t_l_1_1config_1_1_config_a87e8a1037dbe87ec1cb456fabfceba7e}} 
-\index{ETL.config.Config@{ETL.config.Config}!debug\_adls@{debug\_adls}}
-\index{debug\_adls@{debug\_adls}!ETL.config.Config@{ETL.config.Config}}
-\doxysubsubsection{\texorpdfstring{debug\_adls()}{debug\_adls()}}
-{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug\+\_\+adls (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Log to blob file in rawzone/logs
-
-Logging lib on databricks pretty much impossible to use.
-
-Parameters
-----------
-msg: str
-  Message to add as a new line in the log file
-\end{DoxyVerb}
- \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_aefdb79eea94081aa9aa5201620cc2131}\label{class_e_t_l_1_1config_1_1_config_aefdb79eea94081aa9aa5201620cc2131}} 
-\index{ETL.config.Config@{ETL.config.Config}!debug\_win@{debug\_win}}
-\index{debug\_win@{debug\_win}!ETL.config.Config@{ETL.config.Config}}
-\doxysubsubsection{\texorpdfstring{debug\_win()}{debug\_win()}}
-{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+debug\+\_\+win (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Log on C:/logs
-
-Parameters
-----------
-msg: str
-  Message to add as a new line in the log file
 \end{DoxyVerb}
  \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a94c4656546a08231a833a77ffd2baddf}\label{class_e_t_l_1_1config_1_1_config_a94c4656546a08231a833a77ffd2baddf}} 
 \index{ETL.config.Config@{ETL.config.Config}!get\_container\_url\_from\_zone\_name@{get\_container\_url\_from\_zone\_name}}
@@ -194,13 +170,13 @@ Returns
 -------
 str
 \end{DoxyVerb}
- \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a9b89a0f4e0d67eba4f26ebd08b81bd90}\label{class_e_t_l_1_1config_1_1_config_a9b89a0f4e0d67eba4f26ebd08b81bd90}} 
-\index{ETL.config.Config@{ETL.config.Config}!init\_debug\_logger\_file\_handler@{init\_debug\_logger\_file\_handler}}
-\index{init\_debug\_logger\_file\_handler@{init\_debug\_logger\_file\_handler}!ETL.config.Config@{ETL.config.Config}}
-\doxysubsubsection{\texorpdfstring{init\_debug\_logger\_file\_handler()}{init\_debug\_logger\_file\_handler()}}
-{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+init\+\_\+debug\+\_\+logger\+\_\+file\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+ \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a3961238dc1be1060d6e9e48a6aa25c6c}\label{class_e_t_l_1_1config_1_1_config_a3961238dc1be1060d6e9e48a6aa25c6c}} 
+\index{ETL.config.Config@{ETL.config.Config}!init\_debug\_file@{init\_debug\_file}}
+\index{init\_debug\_file@{init\_debug\_file}!ETL.config.Config@{ETL.config.Config}}
+\doxysubsubsection{\texorpdfstring{init\_debug\_file()}{init\_debug\_file()}}
+{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+init\+\_\+debug\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}When there's 50 log files with process name, delete them all.
+\begin{DoxyVerb}Create log file's directories, set file name and create new file.
 
 Returns
 -------
@@ -309,6 +285,19 @@ Returns
 list
   Same zones names as passed if they are valid or all possible zone names if None.
 \end{DoxyVerb}
+ \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_ac7af22d00481c801274b84454b43d441}\label{class_e_t_l_1_1config_1_1_config_ac7af22d00481c801274b84454b43d441}} 
+\index{ETL.config.Config@{ETL.config.Config}!write\_debug@{write\_debug}}
+\index{write\_debug@{write\_debug}!ETL.config.Config@{ETL.config.Config}}
+\doxysubsubsection{\texorpdfstring{write\_debug()}{write\_debug()}}
+{\footnotesize\ttfamily def E\+T\+L.\+config.\+Config.\+write\+\_\+debug (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Log to blob file in rawzone/logs
+
+Parameters
+----------
+obj: dict
+  object to add to json array log file
+\end{DoxyVerb}
  
 
 \doxysubsection{Member Data Documentation}
@@ -354,11 +343,11 @@ list
 \doxysubsubsection{\texorpdfstring{data\_zone\_to\_test\_zone\_hash}{data\_zone\_to\_test\_zone\_hash}}
 {\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+data\+\_\+zone\+\_\+to\+\_\+test\+\_\+zone\+\_\+hash = dict(zip(\mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_af62ab678e9c00a1a7b5dfcfe55774fd1}{supported\+\_\+zones\+\_\+data}}, \mbox{\hyperlink{class_e_t_l_1_1config_1_1_config_a1ef3faf292be4498359fea06cd0662ce}{supported\+\_\+zones\+\_\+test}}))\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a86629d75b319220978715ecb8e503a54}\label{class_e_t_l_1_1config_1_1_config_a86629d75b319220978715ecb8e503a54}} 
-\index{ETL.config.Config@{ETL.config.Config}!debug\_logger\_file@{debug\_logger\_file}}
-\index{debug\_logger\_file@{debug\_logger\_file}!ETL.config.Config@{ETL.config.Config}}
-\doxysubsubsection{\texorpdfstring{debug\_logger\_file}{debug\_logger\_file}}
-{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+debug\+\_\+logger\+\_\+file}
+\mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_a4892d9527cc8df0a9de9f03c93278068}\label{class_e_t_l_1_1config_1_1_config_a4892d9527cc8df0a9de9f03c93278068}} 
+\index{ETL.config.Config@{ETL.config.Config}!debug\_file@{debug\_file}}
+\index{debug\_file@{debug\_file}!ETL.config.Config@{ETL.config.Config}}
+\doxysubsubsection{\texorpdfstring{debug\_file}{debug\_file}}
+{\footnotesize\ttfamily E\+T\+L.\+config.\+Config.\+debug\+\_\+file}
 
 \mbox{\Hypertarget{class_e_t_l_1_1config_1_1_config_ad55aab367fda2aa230018793333e63ed}\label{class_e_t_l_1_1config_1_1_config_ad55aab367fda2aa230018793333e63ed}} 
 \index{ETL.config.Config@{ETL.config.Config}!IH\_DATABRICKS\_SECRET\_SCOPE@{IH\_DATABRICKS\_SECRET\_SCOPE}}
