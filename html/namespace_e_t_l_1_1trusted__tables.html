@@ -76,8 +76,8 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a1b375def0b26a8bff402b8b5b6bb2667"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#a1b375def0b26a8bff402b8b5b6bb2667">read</a> (config, table, **dataframe_reader_options)</td></tr>
 <tr class="separator:a1b375def0b26a8bff402b8b5b6bb2667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd949af23efc5f1bff2ec048d3149d94"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#acd949af23efc5f1bff2ec048d3149d94">write</a> (config, table, num_files=10, df=None, transformation=None, incremental=False, **dataframe_writer_options)</td></tr>
-<tr class="separator:acd949af23efc5f1bff2ec048d3149d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3bcde4d05ad6b38edf9c5ab230ed8ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1trusted__tables.html#ab3bcde4d05ad6b38edf9c5ab230ed8ff">write</a> (config, table, num_files=10, df=None, transformation=None, bool incremental=None, **dataframe_writer_options)</td></tr>
+<tr class="separator:ab3bcde4d05ad6b38edf9c5ab230ed8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">This module provides utility functions to select/read/write JSON data from the trusted zone.
@@ -140,8 +140,8 @@ dataframe_reader_options
 </pre> 
 </div>
 </div>
-<a id="acd949af23efc5f1bff2ec048d3149d94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd949af23efc5f1bff2ec048d3149d94">&#9670;&nbsp;</a></span>write()</h2>
+<a id="ab3bcde4d05ad6b38edf9c5ab230ed8ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3bcde4d05ad6b38edf9c5ab230ed8ff">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,8 +179,8 @@ dataframe_reader_options
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>incremental</em> = <code>False</code>, </td>
+          <td class="paramtype">bool &#160;</td>
+          <td class="paramname"><em>incremental</em> = <code>None</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -216,6 +216,7 @@ transformation: ETL.transform.Transform or (pyspark.sql.DataFrame) -&gt; pyspark
 incremental: bool, optional
   To perform incremental load based on the curated-zone's control table content.
   Only possible when not passing your own DF.
+  Have precedence over config's params
 
 dataframe_writer_options
 </pre> 

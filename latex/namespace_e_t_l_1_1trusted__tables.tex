@@ -5,7 +5,7 @@
 \item 
 def \mbox{\hyperlink{namespace_e_t_l_1_1trusted__tables_a1b375def0b26a8bff402b8b5b6bb2667}{read}} (config, table, $\ast$$\ast$dataframe\+\_\+reader\+\_\+options)
 \item 
-def \mbox{\hyperlink{namespace_e_t_l_1_1trusted__tables_acd949af23efc5f1bff2ec048d3149d94}{write}} (config, table, num\+\_\+files=10, df=None, transformation=None, incremental=False, $\ast$$\ast$dataframe\+\_\+writer\+\_\+options)
+def \mbox{\hyperlink{namespace_e_t_l_1_1trusted__tables_ab3bcde4d05ad6b38edf9c5ab230ed8ff}{write}} (config, table, num\+\_\+files=10, df=None, transformation=None, bool incremental=None, $\ast$$\ast$dataframe\+\_\+writer\+\_\+options)
 \end{DoxyCompactItemize}
 
 
@@ -46,11 +46,11 @@ table: str
 
 dataframe_reader_options
 \end{DoxyVerb}
- \mbox{\Hypertarget{namespace_e_t_l_1_1trusted__tables_acd949af23efc5f1bff2ec048d3149d94}\label{namespace_e_t_l_1_1trusted__tables_acd949af23efc5f1bff2ec048d3149d94}} 
+ \mbox{\Hypertarget{namespace_e_t_l_1_1trusted__tables_ab3bcde4d05ad6b38edf9c5ab230ed8ff}\label{namespace_e_t_l_1_1trusted__tables_ab3bcde4d05ad6b38edf9c5ab230ed8ff}} 
 \index{ETL.trusted\_tables@{ETL.trusted\_tables}!write@{write}}
 \index{write@{write}!ETL.trusted\_tables@{ETL.trusted\_tables}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily def E\+T\+L.\+trusted\+\_\+tables.\+write (\begin{DoxyParamCaption}\item[{}]{config,  }\item[{}]{table,  }\item[{}]{num\+\_\+files = {\ttfamily 10},  }\item[{}]{df = {\ttfamily None},  }\item[{}]{transformation = {\ttfamily None},  }\item[{}]{incremental = {\ttfamily False},  }\item[{$\ast$$\ast$}]{dataframe\+\_\+writer\+\_\+options }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def E\+T\+L.\+trusted\+\_\+tables.\+write (\begin{DoxyParamCaption}\item[{}]{config,  }\item[{}]{table,  }\item[{}]{num\+\_\+files = {\ttfamily 10},  }\item[{}]{df = {\ttfamily None},  }\item[{}]{transformation = {\ttfamily None},  }\item[{bool }]{incremental = {\ttfamily None},  }\item[{$\ast$$\ast$}]{dataframe\+\_\+writer\+\_\+options }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Writes the spark dataframe in json format to the trusted zone.
 
@@ -73,6 +73,7 @@ transformation: ETL.transform.Transform or (pyspark.sql.DataFrame) -> pyspark.sq
 incremental: bool, optional
   To perform incremental load based on the curated-zone's control table content.
   Only possible when not passing your own DF.
+  Have precedence over config's params
 
 dataframe_writer_options
 \end{DoxyVerb}
