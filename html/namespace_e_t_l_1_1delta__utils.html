@@ -77,8 +77,8 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a5cf1b5612a590fbe4f02916a63d697b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a5cf1b5612a590fbe4f02916a63d697b0">read</a> (config, zone, path, **dataframe_reader_options)</td></tr>
 <tr class="separator:a5cf1b5612a590fbe4f02916a63d697b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c4956c0dff249f88cf24f1c8e1dfc2f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a7c4956c0dff249f88cf24f1c8e1dfc2f">write</a> (config, df, zone, path, table=None, **dataframe_writer_options)</td></tr>
-<tr class="separator:a7c4956c0dff249f88cf24f1c8e1dfc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac59422ad9868d11300dedcaa864d69ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#ac59422ad9868d11300dedcaa864d69ff">write</a> (config, df, zone, path, table, **dataframe_writer_options)</td></tr>
+<tr class="separator:ac59422ad9868d11300dedcaa864d69ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b5382c97de7abcc49f5cf213f91656d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a1b5382c97de7abcc49f5cf213f91656d">merge</a> (config, zone, table, df, path, unique_key)</td></tr>
 <tr class="separator:a1b5382c97de7abcc49f5cf213f91656d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a253eb0d98f838d9755b7803ad35bcea5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_e_t_l_1_1delta__utils.html#a253eb0d98f838d9755b7803ad35bcea5">delete</a> (config, zone, table, path, database_name=None, drop=False)</td></tr>
@@ -374,8 +374,8 @@ Parameters
 </pre> 
 </div>
 </div>
-<a id="a7c4956c0dff249f88cf24f1c8e1dfc2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c4956c0dff249f88cf24f1c8e1dfc2f">&#9670;&nbsp;</a></span>write()</h2>
+<a id="ac59422ad9868d11300dedcaa864d69ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac59422ad9868d11300dedcaa864d69ff">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +408,7 @@ Parameters
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>table</em> = <code>None</code>, </td>
+          <td class="paramname"><em>table</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -424,6 +424,8 @@ Parameters
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Write/save data in the delta table(s).
+
+todo allow usage withouge needing to create tables
 
 Parameters
 ----------
